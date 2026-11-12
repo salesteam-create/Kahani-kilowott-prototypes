@@ -55,7 +55,7 @@ export function Chef() {
         <div className="relative col-span-5 h-full">
           <div data-ch-portrait className="absolute inset-0 overflow-hidden">
             <Img id="chefPortrait" alt="Chef Peter Joseph" />
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-espresso/50" />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-espresso/10 to-espresso/85" />
           </div>
         </div>
 

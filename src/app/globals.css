@@ -265,3 +265,19 @@ html.js-fallback .reveal-init { visibility: visible !important; }
   100% { transform: scaleY(0); transform-origin: bottom; }
 }
 @keyframes fadein { from { opacity: 0; transform: scale(1.02); } to { opacity: 1; transform: none; } }
+
+/* Cinematic grade on every framed photograph: a light overall dim and a soft
+   bottom falloff, so photos sit in the dark palette and captions stay legible. */
+.frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgb(16 16 15 / 0.08) 0%, rgb(16 16 15 / 0) 35%, rgb(16 16 15 / 0.42) 100%);
+  z-index: 1;
+}
+/* Reusable scrims for text placed over photography. */
+.scrim-center { background: radial-gradient(60% 50% at 50% 50%, rgb(16 16 15 / 0.55), rgb(16 16 15 / 0.15) 70%, transparent); }
+.scrim-bottom { background: linear-gradient(0deg, rgb(16 16 15 / 0.85), rgb(16 16 15 / 0.35) 35%, transparent 65%); }
+.scrim-left { background: linear-gradient(90deg, rgb(16 16 15 / 0.82), rgb(16 16 15 / 0.45) 40%, transparent 75%); }
+.scrim-right { background: linear-gradient(270deg, rgb(16 16 15 / 0.85), rgb(16 16 15 / 0.45) 45%, transparent 80%); }

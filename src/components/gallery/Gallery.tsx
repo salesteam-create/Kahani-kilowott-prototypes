@@ -93,10 +93,10 @@ export function Gallery() {
             aria-label={`Open image: ${assets[id].subject}`}
           >
             <Img id={id} />
-            <span className="t-label absolute bottom-4 left-4 translate-y-2 text-ivory opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+            <span className="t-label absolute bottom-4 left-4 z-10 translate-y-2 text-ivory opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
               {assets[id].dish ?? assets[id].category.replace("-", " ")}
             </span>
-            <span className="absolute inset-0 bg-obsidian/0 transition-colors duration-500 group-hover:bg-obsidian/25" />
+            <span className="absolute inset-0 bg-gradient-to-t from-obsidian/0 to-transparent transition-colors duration-500 group-hover:from-obsidian/70" />
           </button>
         ))}
       </div>

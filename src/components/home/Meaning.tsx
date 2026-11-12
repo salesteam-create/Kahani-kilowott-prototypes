@@ -43,7 +43,8 @@ export function Meaning() {
       <div className="relative hidden h-full cine:block">
         <div data-plate className="absolute inset-0 overflow-hidden" style={{ clipPath: "inset(14% 0% 14% 64%)" }}>
           <Img id="spices" alt="Whole spices and dried chillies arranged on a dark plate" />
-          <div className="absolute inset-0 bg-gradient-to-r from-obsidian/80 via-obsidian/10 to-transparent" />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgb(16 16 15 / 0.95), rgb(16 16 15 / 0.75) 28%, rgb(16 16 15 / 0.2) 55%, transparent 75%)" }} />
+          <div className="scrim-bottom absolute inset-x-0 bottom-0 h-1/3" />
         </div>
 
         <div data-shift className="gutter relative z-10 flex h-full flex-col justify-center">

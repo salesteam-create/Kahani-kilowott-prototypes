@@ -111,8 +111,8 @@ export const assets = {
   spices: a({
     id: "spices", file: "2019/08/Kahani_792_LowRes_Big.jpg",
     subject: "Whole spices and dried chillies arranged on a dark plate on wood",
-    category: "ingredients", type: "photograph", resolution: "verify", aspect: "landscape",
-    placement: "Meaning: ingredient image", focus: "50% 50%", sourcePage: "/gallery/",
+    category: "ingredients", type: "photograph", resolution: "1672 × 941 (client-supplied)", aspect: "landscape",
+    hq: "spices.webp", placement: "Meaning: ingredient image", focus: "50% 50%", sourcePage: "/gallery/",
   }),
   spiceTable: a({
     id: "spiceTable", file: "2019/08/Octopus_Calimari_4_Big.jpg",
@@ -279,8 +279,8 @@ export const assets = {
   chennai: a({
     id: "chennai", file: "2026/11/Chennai.jpg",
     subject: "A Chola bronze of Nataraja, from the heritage of Chennai, Tamil Nadu",
-    category: "heritage", type: "photograph", resolution: "verify", aspect: "landscape",
-    placement: "Origin: Chennai", focus: "50% 50%", sourcePage: "/culinary-cultural-soul-of-india/",
+    category: "heritage", type: "photograph", resolution: "1672 × 941 (client-supplied)", aspect: "landscape",
+    hq: "nataraja-bronze.webp", placement: "Origin: Chennai", focus: "55% 30%", sourcePage: "/culinary-cultural-soul-of-india/",
   }),
   sadhya: a({
     id: "sadhya", file: "2026/04/traditional-Sadhya-feasts.jpeg",
@@ -304,9 +304,9 @@ export const assets = {
   // ---------------------------------------------------------------- RESTAURANT
   diningRoom: a({
     id: "diningRoom", file: "2019/08/Kahani_261_Final_LowRes_Big.jpg",
-    subject: "The Kahani dining room with globe chandeliers and laid tables",
-    category: "restaurant", type: "photograph", resolution: "verify", aspect: "landscape",
-    placement: "Experience chapter", focus: "50% 45%", sourcePage: "/gallery/",
+    subject: "The Kahani dining room: a marble table laid for dinner beneath gold chandeliers",
+    category: "restaurant", type: "photograph", resolution: "1672 × 941 (client-supplied)", aspect: "landscape",
+    hq: "dining-room.webp", placement: "Experience chapter", focus: "50% 55%", sourcePage: "/gallery/",
   }),
   booths: a({
     id: "booths", file: "2019/08/Kahani_274_LowRes_Big.jpg",
@@ -316,9 +316,9 @@ export const assets = {
   }),
   roomRestaurant: a({
     id: "roomRestaurant", file: "2019/12/home-rooms1.jpg",
-    subject: "The restaurant at Kahani, Chelsea",
-    category: "restaurant", type: "photograph", resolution: "verify", aspect: "landscape",
-    placement: "Experiences page", focus: "50% 50%", sourcePage: "/",
+    subject: "The Kahani restaurant and bar, Chelsea, with velvet chairs and gold chandeliers",
+    category: "restaurant", type: "photograph", resolution: "1672 × 941 (client-supplied)", aspect: "landscape",
+    hq: "restaurant-and-bar.webp", placement: "Experiences page", focus: "50% 50%", sourcePage: "/",
   }),
   velvetChairs: a({
     id: "velvetChairs", file: "2019/12/home-carousel1.jpg",
@@ -354,9 +354,9 @@ export const assets = {
   }),
   bartender: a({
     id: "bartender", file: "2019/08/Kahani_356_LowRes_Big.jpg",
-    subject: "A bartender preparing a drink at the Kahani bar",
-    category: "bar", type: "photograph", resolution: "verify", aspect: "landscape",
-    placement: "Bar chapter", focus: "50% 40%", sourcePage: "/gallery/",
+    subject: "A bartender straining a cocktail at the Kahani bar",
+    category: "bar", type: "photograph", resolution: "1672 × 941 (client-supplied)", aspect: "landscape",
+    hq: "bartender.webp", placement: "Bar chapter", focus: "52% 45%", sourcePage: "/gallery/",
   }),
   cocktails: a({
     id: "cocktails", file: "2019/08/Kahani_625_Final_LowRes_Big.jpg",

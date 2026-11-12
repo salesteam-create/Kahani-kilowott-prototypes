@@ -44,7 +44,8 @@ export function PrivateDining() {
       <div data-pd-stage className="relative h-[100svh] overflow-hidden">
         <div data-pd-room className="absolute inset-0 overflow-hidden cine:[clip-path:inset(6%_44%_6%_44%)]">
           <Img id="peacockRoom" alt="The Peacock Room: royal blue velvet seating, curtains and low pendant lights" />
-          <div className="absolute inset-0 bg-gradient-to-t from-obsidian/80 via-transparent to-obsidian/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-obsidian/80 via-obsidian/20 to-obsidian/40" />
+          <div className="scrim-center absolute inset-0" />
         </div>
         <div className="gutter relative z-10 flex h-full flex-col items-center justify-center text-center">
           <p data-pd-kicker className="t-label text-ivory/80">

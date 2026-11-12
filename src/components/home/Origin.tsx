@@ -115,7 +115,8 @@ export function Origin() {
           {originChapters.map((c, i) => (
             <div key={c.title} data-o-img className="absolute inset-0">
               <Img id={c.image} />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#141210]/70 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#141210]/75 via-[#141210]/10 to-transparent" />
+              <div className="scrim-bottom absolute inset-x-0 bottom-0 h-1/3" />
               <span className="t-label absolute bottom-8 right-8 text-ivory/70">
                 {String(i + 1).padStart(2, "0")} · {c.title}
               </span>

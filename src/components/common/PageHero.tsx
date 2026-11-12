@@ -53,7 +53,8 @@ export function PageHero({
         <div data-ph-drift className="absolute inset-0">
           <Img id={image} priority alt={alt} />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/35 to-obsidian/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-obsidian/50" />
+        <div className="scrim-left absolute inset-0 opacity-80" />
         <div className="grain absolute inset-0" />
       </div>
       <div className="gutter relative z-10 flex h-full flex-col justify-end pb-14 lg:pb-20">

@@ -17,7 +17,7 @@ export const metadata = pageMeta({
 });
 
 const ROOMS: { kicker: string; title: string; body: string; image: AssetId; detail: AssetId }[] = [
-  { kicker: "The restaurant", title: "Luxe, seductively lit.", body: copy.restaurant, image: "diningRoom", detail: "booths" },
+  { kicker: "The restaurant", title: "Luxe, seductively lit.", body: copy.restaurant, image: "roomRestaurant", detail: "booths" },
   { kicker: "The bar", title: "A wall dedicated to wine.", body: copy.bar, image: "bar", detail: "cocktails" },
   { kicker: "The occasion", title: "The whole room, yours.", body: copy.occasion, image: "velvetChairs", detail: "wineWall" },
 ];

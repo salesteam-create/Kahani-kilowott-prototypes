@@ -43,7 +43,8 @@ export function Experience() {
       <div data-x-open className="relative h-[100svh] overflow-hidden">
         <div data-x-mask className="absolute inset-0 overflow-hidden">
           <Img id="diningRoom" alt="The Kahani dining room with globe chandeliers" />
-          <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/30 to-obsidian/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/45 to-obsidian/40" />
+          <div className="scrim-left absolute inset-0 opacity-70" />
         </div>
         <div className="gutter relative z-10 flex h-full flex-col justify-end pb-16 lg:pb-20">
           <p className="t-label mb-6 text-brass">06 · The experience</p>
@@ -92,7 +93,8 @@ export function Experience() {
           <Parallax speed={18} className="absolute inset-x-0 -inset-y-[10%]">
             <Img id="bar" alt="The Kahani bar, backlit shelves and stools" />
           </Parallax>
-          <div className="absolute inset-0 bg-gradient-to-l from-obsidian/90 via-obsidian/30 to-transparent" />
+          <div className="scrim-right absolute inset-0" />
+          <div className="absolute inset-0 bg-obsidian/35" />
           <div className="gutter relative z-10 flex h-full flex-col items-end justify-center text-right">
             <p className="t-label text-brass">B · The bar</p>
             <RevealText as="h3" className="t-display mt-4 max-w-[10ch]">

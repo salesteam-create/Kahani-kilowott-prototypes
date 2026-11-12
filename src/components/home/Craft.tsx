@@ -78,7 +78,8 @@ export function Craft() {
               <Img id={s.image} />
             </div>
           ))}
-          <div data-c-shade className="absolute inset-0 bg-gradient-to-r from-obsidian/75 via-obsidian/25 to-transparent" />
+          <div data-c-shade className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgb(16 16 15 / 0.85), rgb(16 16 15 / 0.55) 40%, rgb(16 16 15 / 0.2) 70%, rgb(16 16 15 / 0.1))" }} />
+          <div className="scrim-bottom absolute inset-x-0 bottom-0 h-1/3" />
           <div className="grain absolute inset-0" />
         </div>
 

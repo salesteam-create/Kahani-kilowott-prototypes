@@ -100,7 +100,7 @@ export function MenuJourney() {
                 <div className="absolute inset-0">
                   <Img id={d.image} alt={d.name} />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-obsidian/85 via-obsidian/10 to-transparent transition-opacity duration-700 group-hover:opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/35 to-obsidian/5 transition-opacity duration-700 group-hover:opacity-80" />
                 <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-10 p-10">
                   <div className="max-w-xl">
                     <p data-m-text className="t-label text-brass">

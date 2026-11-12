@@ -118,6 +118,8 @@ export function Opening() {
         </div>
       </div>
       <div data-edge aria-hidden className="pointer-events-none absolute inset-0 opacity-0" style={{ background: "radial-gradient(70% 60% at 50% 50%, transparent 20%, rgb(16 16 15 / 0.96) 100%)" }} />
+      <div aria-hidden className="scrim-center pointer-events-none absolute inset-0" />
+      <div aria-hidden className="scrim-bottom pointer-events-none absolute inset-x-0 bottom-0 h-1/2 opacity-80" />
       <div data-shade aria-hidden className="pointer-events-none absolute inset-0 bg-obsidian" />
       <div data-shade-scroll aria-hidden className="pointer-events-none absolute inset-0 bg-obsidian opacity-0" />
 
