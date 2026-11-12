@@ -99,7 +99,7 @@ export function Experience() {
         <div className="gutter relative z-10 -mt-24 flex justify-start sm:-mt-40">
           <Parallax speed={-24} className="w-[62%] sm:w-[38%] lg:w-[24%]">
             <ImageReveal direction="circle" className="aspect-[4/5]">
-              <Img id="cocktailsBar" />
+              <Img id="cocktailOrange" />
             </ImageReveal>
           </Parallax>
         </div>

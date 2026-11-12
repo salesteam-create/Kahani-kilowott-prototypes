@@ -366,9 +366,9 @@ export const assets = {
   }),
   cocktailOrange: a({
     id: "cocktailOrange", file: "2019/08/08_Zoom.jpg",
-    subject: "A golden cocktail garnished with fruit",
-    category: "bar", type: "photograph", resolution: "verify", aspect: "landscape",
-    placement: "Gallery", focus: "50% 50%", sourcePage: "/gallery/",
+    subject: "A golden coupe cocktail garnished with a pineapple wedge",
+    category: "bar", type: "photograph", resolution: "1536 × 1024 (client-supplied)", aspect: "landscape",
+    hq: "pineapple-cocktail.webp", placement: "Gallery", focus: "30% 50%", sourcePage: "/gallery/",
   }),
   cocktailsBar: a({
     id: "cocktailsBar", file: "2019/08/09_Zoom.jpg",
