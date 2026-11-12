@@ -26,7 +26,7 @@ const OCCASIONS: { title: string; body: string; image: AssetId }[] = [
 export default function PrivateDiningPage() {
   return (
     <>
-      <PageHero image="peacockRoom" kicker="Private dining" title={["The Peacock Room.", "An intimate world of its own."]} alt="The Peacock Room at Kahani" />
+      <PageHero image="booths" kicker="Private dining" title={["The Peacock Room.", "An intimate world of its own."]} alt="The Peacock Room at Kahani" />
 
       <section className="gutter grid grid-cols-1 gap-14 py-24 lg:grid-cols-12 lg:py-36">
         <div className="lg:col-span-6">
@@ -59,7 +59,7 @@ export default function PrivateDiningPage() {
 
       <section className="relative h-[70svh] overflow-hidden lg:h-[100svh]">
         <Parallax speed={20} className="absolute inset-x-0 -inset-y-[10%]">
-          <Img id="peacockRoom" />
+          <Img id="diningRoom" />
         </Parallax>
         <div className="absolute inset-0 bg-gradient-to-b from-obsidian/40 via-transparent to-obsidian" />
       </section>
