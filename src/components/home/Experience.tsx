@@ -63,27 +63,20 @@ export function Experience() {
       </div>
 
       {/* A · The restaurant */}
-      <div className="gutter grid grid-cols-1 gap-10 py-24 lg:grid-cols-12 lg:gap-6 lg:py-40">
+      <div className="gutter grid grid-cols-1 items-center gap-10 py-24 lg:grid-cols-12 lg:gap-6 lg:py-40">
         <div className="lg:col-span-7">
-          <ImageReveal direction="right" className="aspect-[4/3]">
-            <Img id="booths" />
+          <ImageReveal direction="right" className="aspect-[16/10]">
+            <Img id="roomRestaurant" />
           </ImageReveal>
         </div>
-        <div className="flex flex-col justify-between gap-10 lg:col-span-4 lg:col-start-9">
-          <div>
-            <p className="t-label text-muted">A · The restaurant</p>
-            <RevealText as="h3" className="t-headline mt-4">
-              Luxe, seductively lit, and made for sharing.
-            </RevealText>
-            <p className="mt-6 text-ivory/70">
-              The main restaurant seats up to ninety guests at 1 Wilbraham Place, opposite Cadogan Hall. Velvet, low light and a room built around the table.
-            </p>
-          </div>
-          <Parallax speed={-18} className="relative ml-auto w-3/4 lg:-ml-24 lg:w-[115%]">
-            <ImageReveal direction="up" className="aspect-[3/4]" delay={0.15}>
-              <Img id="velvetChairs" />
-            </ImageReveal>
-          </Parallax>
+        <div className="lg:col-span-4 lg:col-start-9 lg:pr-6">
+          <p className="t-label text-muted">A · The restaurant</p>
+          <RevealText as="h3" className="t-headline mt-4">
+            Luxe, seductively lit, and made for sharing.
+          </RevealText>
+          <p className="mt-6 max-w-sm text-ivory/70">
+            The main restaurant seats up to ninety guests at 1 Wilbraham Place, opposite Cadogan Hall. Velvet, low light and a room built around the table.
+          </p>
         </div>
       </div>
 

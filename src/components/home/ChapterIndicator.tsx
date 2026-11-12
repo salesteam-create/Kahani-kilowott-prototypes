@@ -57,7 +57,7 @@ export function ChapterIndicator() {
       onMouseLeave={() => setOpen(false)}
       onFocus={() => setOpen(true)}
       onBlur={() => setOpen(false)}
-      className={`fixed right-[calc(var(--gutter)*0.6)] top-1/2 z-30 hidden -translate-y-1/2 transition-opacity duration-700 lg:block ${
+      className={`fixed right-3 top-1/2 z-30 hidden -translate-y-1/2 transition-opacity duration-700 lg:block ${
         visible ? "opacity-100" : "pointer-events-none opacity-0"
       }`}
     >
@@ -73,7 +73,7 @@ export function ChapterIndicator() {
               >
                 <span
                   className={`t-label whitespace-nowrap transition-[opacity,transform,color] duration-500 ${
-                    open || active === i ? "translate-x-0 opacity-100" : "translate-x-2 opacity-0"
+                    open ? "translate-x-0 opacity-100" : "pointer-events-none translate-x-2 opacity-0"
                   } ${active === i ? "text-ivory" : "text-muted group-hover:text-ivory"}`}
                 >
                   {c.label}
