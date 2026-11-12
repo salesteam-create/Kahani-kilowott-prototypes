@@ -45,6 +45,8 @@ export interface Asset {
   placement: string;
   /** CSS object-position that protects the subject when cropped. */
   focus?: string;
+  /** Client-supplied high-resolution version, served from /public/images/hq. Takes priority. */
+  hq?: string;
   /** Official dish name, only where it matches the current menu. */
   dish?: string;
   sourcePage: string;
@@ -57,8 +59,8 @@ export const assets = {
   saucePour: a({
     id: "saucePour", file: "2019/08/Kahani_802_Final_LowRes_Big.jpg",
     subject: "A sauce poured from a white jug over a plated dish on a dark wooden table",
-    category: "hero", type: "photograph", resolution: "verify", aspect: "landscape",
-    placement: "Homepage opening film", focus: "50% 45%", sourcePage: "/gallery/",
+    category: "hero", type: "photograph", resolution: "1536 × 1024 (client-supplied)", aspect: "landscape",
+    hq: "sauce-pour.webp", placement: "Homepage opening film", focus: "50% 45%", sourcePage: "/gallery/",
   }),
   chocolatePour: a({
     id: "chocolatePour", file: "2019/08/spotlight-gallery.jpg",
@@ -213,8 +215,8 @@ export const assets = {
   crispyGreens: a({
     id: "crispyGreens", file: "2019/08/02_Zoom.jpg",
     subject: "A crisp, deep green dish served on a white plate against red",
-    category: "food", type: "photograph", resolution: "verify", aspect: "landscape",
-    placement: "Gallery", focus: "50% 50%", sourcePage: "/gallery/",
+    category: "food", type: "photograph", resolution: "1536 × 1024 (client-supplied)", aspect: "landscape",
+    hq: "crispy-greens.webp", placement: "Gallery", focus: "50% 50%", sourcePage: "/gallery/",
   }),
   dessertDark: a({
     id: "dessertDark", file: "2019/08/04_Zoom.jpg",
@@ -250,9 +252,9 @@ export const assets = {
   // ---------------------------------------------------------------- CHEF
   chefPortrait: a({
     id: "chefPortrait", file: "2026/04/Chef-Peter-Joseph-1-scaled.jpeg",
-    subject: "Chef Peter Joseph, portrait",
-    category: "chef", type: "photograph", resolution: "1932 × 2560", aspect: "portrait",
-    placement: "Chef chapter / chef page", focus: "50% 25%", sourcePage: "/culinary-cultural-soul-of-india/",
+    subject: "Chef Peter Joseph in the Kahani dining room, holding a plated lamb dish",
+    category: "chef", type: "photograph", resolution: "1672 × 941 (client-supplied)", aspect: "landscape",
+    hq: "chef-peter-joseph.webp", placement: "Chef chapter / chef page", focus: "57% 30%", sourcePage: "/culinary-cultural-soul-of-india/",
   }),
   chefSeated: a({
     id: "chefSeated", file: "2019/08/spotlight-story.jpg",
@@ -341,14 +343,14 @@ export const assets = {
   wineWall: a({
     id: "wineWall", file: "2019/08/Copy_of_restaurant_edit045_Big.jpg",
     subject: "A floor-to-ceiling wall of wine bottles",
-    category: "bar", type: "photograph", resolution: "verify", aspect: "landscape",
-    placement: "Bar chapter", focus: "50% 50%", sourcePage: "/gallery/",
+    category: "bar", type: "photograph", resolution: "1536 × 1024 (client-supplied)", aspect: "landscape",
+    hq: "wine-wall.webp", placement: "Bar chapter", focus: "50% 50%", sourcePage: "/gallery/",
   }),
   bar: a({
     id: "bar", file: "2019/08/Kahani_295_Final_LowRes_Big.jpg",
-    subject: "The Kahani bar with backlit shelves and stools",
-    category: "bar", type: "photograph", resolution: "verify", aspect: "landscape",
-    placement: "Bar chapter", focus: "50% 50%", sourcePage: "/gallery/",
+    subject: "The Kahani bar: backlit shelves, brass pendants and teal velvet stools",
+    category: "bar", type: "photograph", resolution: "1536 × 1024 (client-supplied)", aspect: "landscape",
+    hq: "bar.webp", placement: "Bar chapter", focus: "50% 50%", sourcePage: "/gallery/",
   }),
   bartender: a({
     id: "bartender", file: "2019/08/Kahani_356_LowRes_Big.jpg",
@@ -402,8 +404,9 @@ export type AssetId = keyof typeof assets;
 export const heroVideo: { mp4: string; webm?: string; poster: AssetId } | null = null;
 
 export function assetUrl(id: AssetId) {
-  const { file } = assets[id];
-  return LOCAL ? `/media/${file}` : `${ORIGIN}/${file}`;
+  const asset: Asset = assets[id];
+  if (asset.hq) return `/images/hq/${asset.hq}`;
+  return LOCAL ? `/media/${asset.file}` : `${ORIGIN}/${asset.file}`;
 }
 
 /** Curated gallery (each image once), grouped for filtering. */
