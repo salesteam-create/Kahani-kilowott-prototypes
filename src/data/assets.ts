@@ -276,7 +276,7 @@ export const assets = {
   // ---------------------------------------------------------------- HERITAGE (official experiences page)
   chennai: a({
     id: "chennai", file: "2026/11/Chennai.jpg",
-    subject: "Chennai, Tamil Nadu, where Peter Joseph grew up",
+    subject: "A Chola bronze of Nataraja, from the heritage of Chennai, Tamil Nadu",
     category: "heritage", type: "photograph", resolution: "verify", aspect: "landscape",
     placement: "Origin: Chennai", focus: "50% 50%", sourcePage: "/culinary-cultural-soul-of-india/",
   }),
