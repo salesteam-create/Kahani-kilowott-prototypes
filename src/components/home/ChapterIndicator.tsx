@@ -31,7 +31,9 @@ export function ChapterIndicator() {
       setActive(idx);
       const meaning = els[1]?.getBoundingClientRect();
       const last = els[els.length - 1]?.getBoundingClientRect();
-      setVisible(!!meaning && !!last && meaning.top <= vh * 0.6 && last.bottom > vh * 0.5);
+      // Hidden over the menu chapter, whose final panel uses the full width for the menu index.
+      const menuIdx = chapters.findIndex((c) => c.id === "menu");
+      setVisible(!!meaning && !!last && meaning.top <= vh * 0.6 && last.bottom > vh * 0.5 && idx !== menuIdx);
       const max = document.documentElement.scrollHeight - vh;
       if (bar.current) bar.current.style.transform = `scaleY(${max > 0 ? window.scrollY / max : 0})`;
     };

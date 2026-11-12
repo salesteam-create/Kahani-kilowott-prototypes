@@ -124,9 +124,9 @@ export const assets = {
   // ---------------------------------------------------------------- FOOD (named only when on the current menu)
   broccoli: a({
     id: "broccoli", file: "2019/08/Tandoori_Broccoli_Big.jpg",
-    subject: "Tandoori broccoli plated on a pale ceramic dish",
-    category: "food", type: "photograph", resolution: "verify", aspect: "landscape",
-    placement: "Menu journey", focus: "50% 50%", dish: "Tandoori broccoli", sourcePage: "/gallery/",
+    subject: "Tandoori broccoli with crushed wheat crisps and turmeric yoghurt on a speckled brown plate",
+    category: "food", type: "photograph", resolution: "1536 × 1024 (client-supplied)", aspect: "landscape",
+    hq: "tandoori-broccoli.webp", placement: "Menu journey", focus: "50% 50%", dish: "Tandoori broccoli", sourcePage: "/gallery/",
   }),
   prawns: a({
     id: "prawns", file: "2019/08/Malabar_Prawns_1_Big.jpg",
