@@ -233,8 +233,8 @@ export const assets = {
   cocktailsTable: a({
     id: "cocktailsTable", file: "2019/12/drink-menu-1024x683.jpg",
     subject: "Four cocktails with star anise and citrus on a wooden table",
-    category: "bar", type: "photograph", resolution: "1024 × 683", aspect: "landscape",
-    placement: "Menus: drinks", focus: "50% 50%", sourcePage: "/",
+    category: "bar", type: "photograph", resolution: "1535 × 1024 (client-supplied)", aspect: "landscape",
+    hq: "cocktails-star-anise.webp", placement: "Menus: drinks", focus: "50% 50%", sourcePage: "/",
   }),
   aboutFood: a({
     id: "aboutFood", file: "2019/08/about-food.png",

@@ -100,11 +100,11 @@ export function PrivateDining() {
 
         <div className="relative cine:col-span-6 cine:col-start-7">
           <ImageReveal direction="up" className="aspect-[4/5]">
-            <Img id="privateFood" />
+            <Img id="roomRestaurant" />
           </ImageReveal>
           <Parallax speed={-22} className="absolute -bottom-10 -left-6 w-[45%] sm:-left-16">
             <ImageReveal direction="right" className="aspect-square" delay={0.2}>
-              <Img id="tikkaPlatter" />
+              <Img id="cocktailsTable" />
             </ImageReveal>
           </Parallax>
         </div>
