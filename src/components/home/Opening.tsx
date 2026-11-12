@@ -61,6 +61,16 @@ export function Opening() {
       const q = gsap.utils.selector(root);
       const mm = gsap.matchMedia();
 
+      // The "Kahani · story" mark dissolves like smoke: the SVG filter warps it
+      // with turbulence and blur while it drifts up, swells and fades.
+      const smoke = (tl: gsap.core.Timeline, d: number) => {
+        const el = root.current!;
+        tl.to(el.querySelector("#kahani-smoke-disp"), { attr: { scale: 70 }, duration: d, ease: "power1.in" }, 0)
+          .to(el.querySelector("#kahani-smoke-blur"), { attr: { stdDeviation: 5 }, duration: d, ease: "power1.in" }, 0)
+          .to(el.querySelector("#kahani-smoke-noise"), { attr: { baseFrequency: "0.018 0.07" }, duration: d, ease: "power1.in" }, 0)
+          .to(q("[data-smoke]"), { opacity: 0, y: -70, scale: 1.12, duration: d, ease: "power2.in" }, 0);
+      };
+
       mm.add(MQ.desktop, () => {
         const tl = gsap.timeline({
           defaults: { ease: "none" },
@@ -74,6 +84,7 @@ export function Opening() {
           .fromTo(q("[data-define] > *"), { opacity: 0, y: 40 }, { opacity: 1, y: 0, stagger: 0.08, duration: 0.35 }, 0.45)
           .fromTo(q("[data-shade-scroll]"), { opacity: 0 }, { opacity: 0.72, duration: 0.45 }, 0.55)
           .to(q("[data-define]"), { opacity: 0, y: -30, duration: 0.2 }, 0.88);
+        smoke(tl, 0.35);
       });
 
       mm.add(MQ.mobile, () => {
@@ -89,7 +100,9 @@ export function Opening() {
           ease: "none",
           scrollTrigger: { trigger: root.current, start: "top top", end: "60% top", scrub: true },
         });
+        smoke(gsap.timeline({ scrollTrigger: { trigger: root.current, start: "top top", end: "+=38%", scrub: 0.6 } }), 1);
       });
+
     },
     { scope: root },
   );
@@ -142,22 +155,33 @@ export function Opening() {
           </p>
         </div>
 
-        <div data-bottom className="grid grid-cols-2 items-end gap-4 sm:grid-cols-3">
-          <p data-meta className="t-label text-ivory/70">
-            {site.descriptor}
-          </p>
+        <div className="mb-8 flex justify-center sm:mb-6">
           <button
             type="button"
             data-cue
             onClick={() => scrollTo("#meaning")}
-            className="group hidden flex-col items-center gap-3 justify-self-center sm:flex"
-            aria-label="Begin the story"
+            className="group block"
+            aria-label="Kahani means story. Begin the story"
           >
-            <span className="t-label text-ivory/60 transition-colors group-hover:text-ivory">Scroll</span>
-            <span className="relative h-14 w-px overflow-hidden bg-ivory/15">
-              <span data-cue-line className="absolute inset-0 origin-top bg-ivory/80 motion-safe:animate-[cue_2.4s_cubic-bezier(.65,0,.35,1)_infinite]" />
+            <span data-smoke className="block origin-center will-change-transform">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/hq/kahani-story.png"
+                alt=""
+                width={833}
+                height={91}
+                draggable={false}
+                className="h-auto w-[min(80vw,21rem)] transition-opacity duration-500 group-hover:opacity-85 sm:w-[min(30rem,38vw)]"
+                style={{ filter: "url(#kahani-smoke)" }}
+              />
             </span>
           </button>
+        </div>
+
+        <div data-bottom className="grid grid-cols-2 items-end gap-4">
+          <p data-meta className="t-label text-ivory/70">
+            {site.descriptor}
+          </p>
           <div data-meta className="flex flex-col items-end gap-3 text-right">
             <p className="t-label text-ivory/70">{site.location}</p>
             <button type="button" onClick={openReserve} className="link-line t-nav text-ivory">
@@ -166,6 +190,15 @@ export function Opening() {
           </div>
         </div>
       </div>
+
+      {/* Smoke filter for the story mark (identity at rest: scale 0, blur 0) */}
+      <svg aria-hidden width="0" height="0" className="absolute">
+        <filter id="kahani-smoke" x="-30%" y="-160%" width="160%" height="420%" colorInterpolationFilters="sRGB">
+          <feTurbulence id="kahani-smoke-noise" type="fractalNoise" baseFrequency="0.01 0.04" numOctaves="2" seed="7" result="noise" />
+          <feDisplacementMap id="kahani-smoke-disp" in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="G" result="warp" />
+          <feGaussianBlur id="kahani-smoke-blur" in="warp" stdDeviation="0" />
+        </filter>
+      </svg>
 
       {/* Definition revealed while the frame pushes in */}
       <div data-define aria-hidden style={{ opacity: 0 }} className="pointer-events-none absolute inset-0 z-10 hidden flex-col items-center justify-center gap-5 text-center lg:flex">
