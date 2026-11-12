@@ -65,10 +65,10 @@ export function Opening() {
       // with turbulence and blur while it drifts up, swells and fades.
       const smoke = (tl: gsap.core.Timeline, d: number) => {
         const el = root.current!;
-        tl.to(el.querySelector("#kahani-smoke-disp"), { attr: { scale: 70 }, duration: d, ease: "power1.in" }, 0)
-          .to(el.querySelector("#kahani-smoke-blur"), { attr: { stdDeviation: 5 }, duration: d, ease: "power1.in" }, 0)
+        tl.to(el.querySelector("#kahani-smoke-disp"), { attr: { scale: 40 }, duration: d, ease: "power1.in" }, 0)
+          .to(el.querySelector("#kahani-smoke-blur"), { attr: { stdDeviation: 3 }, duration: d, ease: "power1.in" }, 0)
           .to(el.querySelector("#kahani-smoke-noise"), { attr: { baseFrequency: "0.018 0.07" }, duration: d, ease: "power1.in" }, 0)
-          .to(q("[data-smoke]"), { opacity: 0, y: -70, scale: 1.12, duration: d, ease: "power2.in" }, 0);
+          .to(q("[data-smoke]"), { opacity: 0, y: -40, scale: 1.1, duration: d, ease: "power2.in" }, 0);
       };
 
       mm.add(MQ.desktop, () => {
@@ -79,7 +79,7 @@ export function Opening() {
         tl.to(q("[data-media-wrap]"), { scale: 1.18 }, 0)
           .to(q("[data-letter-x]"), { x: (i: number) => (i - 2.5) * 34, duration: 0.6 }, 0)
           .to(q("[data-word]"), { clipPath: "inset(0% 0% 100% 0%)", yPercent: -12, duration: 0.55 }, 0.2)
-          .to(q("[data-tagline], [data-bottom]"), { opacity: 0, y: -20, duration: 0.25 }, 0.05)
+          .to(q("[data-tagline], [data-fade-meta]"), { opacity: 0, y: -20, duration: 0.25 }, 0.05)
           .to(q("[data-edge]"), { opacity: 1, duration: 0.6 }, 0.15)
           .fromTo(q("[data-define] > *"), { opacity: 0, y: 40 }, { opacity: 1, y: 0, stagger: 0.08, duration: 0.35 }, 0.45)
           .fromTo(q("[data-shade-scroll]"), { opacity: 0 }, { opacity: 0.72, duration: 0.45 }, 0.55)
@@ -155,12 +155,20 @@ export function Opening() {
           </p>
         </div>
 
-        <div className="mb-8 flex justify-center sm:mb-6">
+        {/* Bottom row: descriptor · story mark · location + reserve, on one line */}
+        <div data-bottom className="grid grid-cols-[minmax(0,1fr)_auto_auto] items-end gap-3 sm:grid-cols-[1fr_auto_1fr] sm:gap-6">
+          <div data-fade-meta>
+            <div data-meta className="space-y-2">
+              <p className="t-label text-ivory/70">{site.descriptor}</p>
+              {/* On phones the location sits under the descriptor so the row fits */}
+              <p className="t-label text-ivory/50 sm:hidden">{site.location}</p>
+            </div>
+          </div>
           <button
             type="button"
             data-cue
             onClick={() => scrollTo("#meaning")}
-            className="group block"
+            className="group block justify-self-center"
             aria-label="Kahani means story. Begin the story"
           >
             <span data-smoke className="block origin-center will-change-transform">
@@ -171,22 +179,18 @@ export function Opening() {
                 width={833}
                 height={91}
                 draggable={false}
-                className="h-auto w-[min(80vw,21rem)] transition-opacity duration-500 group-hover:opacity-85 sm:w-[min(30rem,38vw)]"
+                className="h-auto w-[30vw] max-w-[15rem] transition-opacity duration-500 group-hover:opacity-85 sm:w-[min(15rem,20vw)]"
                 style={{ filter: "url(#kahani-smoke)" }}
               />
             </span>
           </button>
-        </div>
-
-        <div data-bottom className="grid grid-cols-2 items-end gap-4">
-          <p data-meta className="t-label text-ivory/70">
-            {site.descriptor}
-          </p>
-          <div data-meta className="flex flex-col items-end gap-3 text-right">
-            <p className="t-label text-ivory/70">{site.location}</p>
-            <button type="button" onClick={openReserve} className="link-line t-nav text-ivory">
-              Reserve <span className="arrow">→</span>
-            </button>
+          <div data-fade-meta className="justify-self-end">
+            <div data-meta className="flex flex-col items-end gap-3 text-right">
+              <p className="t-label hidden text-ivory/70 sm:block">{site.location}</p>
+              <button type="button" onClick={openReserve} className="link-line t-nav text-ivory">
+                Reserve <span className="arrow">→</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
