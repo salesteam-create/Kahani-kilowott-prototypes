@@ -14,7 +14,7 @@ export default function Menus() {
   return (
     <>
       <PageHero
-        image="prawns"
+        image="crispyGreens"
         height="short"
         kicker="Menus"
         title={["An expression", "of flavour."]}

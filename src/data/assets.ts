@@ -130,9 +130,9 @@ export const assets = {
   }),
   prawns: a({
     id: "prawns", file: "2019/08/Malabar_Prawns_1_Big.jpg",
-    subject: "Malabar prawns served on a dark stone plate",
-    category: "food", type: "photograph", resolution: "verify", aspect: "landscape",
-    placement: "Menu journey", focus: "50% 50%", dish: "Smoked Malabar prawns", sourcePage: "/gallery/",
+    subject: "Smoked Malabar prawns with green herb dots and a viola, on a white dish set in a black stone plate",
+    category: "food", type: "photograph", resolution: "750 × 400 (client-supplied)", aspect: "landscape",
+    hq: "malabar-prawns.webp", placement: "Menu journey", focus: "50% 50%", dish: "Smoked Malabar prawns", sourcePage: "/gallery/",
   }),
   crab: a({
     id: "crab", file: "2019/08/Softshell_Crab_Big.jpg",
@@ -160,9 +160,9 @@ export const assets = {
   }),
   aubergine: a({
     id: "aubergine", file: "2019/08/Aubergine_Steak_Big-2.jpg",
-    subject: "A plated aubergine dish on a dark ceramic plate",
-    category: "food", type: "photograph", resolution: "verify", aspect: "landscape",
-    placement: "Gallery", focus: "50% 50%", sourcePage: "/gallery/",
+    subject: "A whole roasted aubergine topped with a spiced filling, on a grey plate over a dark wooden board",
+    category: "food", type: "photograph", resolution: "1200 × 800 (client-supplied)", aspect: "landscape",
+    hq: "aubergine.webp", placement: "Gallery", focus: "50% 50%", sourcePage: "/gallery/",
   }),
   chocolateBomb1: a({
     id: "chocolateBomb1", file: "2019/08/Chocolate_Chilli_Bomb_1_Big-1.jpg",
@@ -172,15 +172,15 @@ export const assets = {
   }),
   chocolateBomb2: a({
     id: "chocolateBomb2", file: "2019/08/Chocolate_Chilli_Bomb_2_Big-1.jpg",
-    subject: "A chocolate dessert plated on marble",
-    category: "food", type: "photograph", resolution: "verify", aspect: "landscape",
-    placement: "Gallery", focus: "50% 50%", sourcePage: "/gallery/",
+    subject: "A chocolate dome dessert with mousse, honeycomb, strawberries and a pink sorbet on a grey plate",
+    category: "food", type: "photograph", resolution: "1200 × 800 (client-supplied)", aspect: "landscape",
+    hq: "chocolate-dome.webp", placement: "Gallery", focus: "50% 50%", sourcePage: "/gallery/",
   }),
   avocado: a({
     id: "avocado", file: "2019/08/Grilled_Avocado_with_Olives_Big.jpg",
-    subject: "Grilled avocado with olives in a black bowl",
-    category: "food", type: "photograph", resolution: "verify", aspect: "landscape",
-    placement: "Gallery", focus: "50% 50%", sourcePage: "/gallery/",
+    subject: "Chargrilled avocado with olives and herbs in a black bowl on marble",
+    category: "food", type: "photograph", resolution: "1200 × 800 (client-supplied)", aspect: "landscape",
+    hq: "grilled-avocado.webp", placement: "Gallery", focus: "50% 50%", sourcePage: "/gallery/",
   }),
   tikkaPlatter: a({
     id: "tikkaPlatter", file: "2019/08/Kahani_168_LowRes_Big.jpg",

@@ -199,7 +199,7 @@ export const menus: Menu[] = [
     kind: "food",
     summary: "A dedicated plant-based menu.",
     pdf: `${PDF}/2026/10/Vegan-menu.pdf`,
-    image: "avocadoGrill",
+    image: "avocado",
   },
   {
     slug: "bottomless-brunch",
