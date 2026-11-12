@@ -38,7 +38,9 @@ export function Opening() {
         .fromTo(q("[data-media]"), { scale: 1.08 }, { scale: 1, duration: 3.4, ease: "power3.out" }, 0)
         .fromTo(q("[data-letter]"), { yPercent: 108 }, { yPercent: 0, duration: 1.5, stagger: 0.075 }, 0.55)
         .fromTo(q("[data-tagline] > span"), { yPercent: 110 }, { yPercent: 0, duration: 1.2 }, 1.25)
-        .fromTo(q("[data-meta], [data-cue]"), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 1.1, stagger: 0.12 }, 1.45);
+        .fromTo(q("[data-meta], [data-cue]"), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 1.1, stagger: 0.12 }, 1.45)
+        // Release the letter mask once KAHANI has risen, so the smoke dissolve can scatter the letters freely.
+        .set(q("[data-word]"), { overflow: "visible" }, 2.2);
 
       if (reduce) {
         intro.progress(1);
@@ -71,6 +73,28 @@ export function Opening() {
           .to(q("[data-smoke]"), { opacity: 0, y: -40, scale: 1.1, duration: d, ease: "power2.in" }, 0);
       };
 
+      // KAHANI dissolves like smoke: turbulence warps and blurs the whole word
+      // while each letter drifts upward and fades on its own, outward from the centre.
+      const wordSmoke = (tl: gsap.core.Timeline, at: number, d: number) => {
+        const el = root.current!;
+        tl.to(el.querySelector("#word-smoke-disp"), { attr: { scale: 140 }, duration: d, ease: "power1.in" }, at)
+          .to(el.querySelector("#word-smoke-blur"), { attr: { stdDeviation: 9 }, duration: d, ease: "power1.in" }, at)
+          .to(el.querySelector("#word-smoke-noise"), { attr: { baseFrequency: "0.022 0.08" }, duration: d, ease: "power1.in" }, at)
+          .to(q("[data-word-smoke]"), { yPercent: -30, opacity: 0, scale: 1.05, duration: d, ease: "power1.in" }, at)
+          .to(
+            q("[data-letter-x]"),
+            {
+              y: (i: number) => -30 - ((i * 37) % 5) * 14,
+              rotate: (i: number) => (i - 2.5) * 2.5,
+              opacity: 0,
+              duration: d * 0.75,
+              ease: "power1.in",
+              stagger: { each: d * 0.06, from: "center" },
+            },
+            at + d * 0.1,
+          );
+      };
+
       mm.add(MQ.desktop, () => {
         const tl = gsap.timeline({
           defaults: { ease: "none" },
@@ -78,13 +102,13 @@ export function Opening() {
         });
         tl.to(q("[data-media-wrap]"), { scale: 1.18 }, 0)
           .to(q("[data-letter-x]"), { x: (i: number) => (i - 2.5) * 34, duration: 0.6 }, 0)
-          .to(q("[data-word]"), { clipPath: "inset(0% 0% 100% 0%)", yPercent: -12, duration: 0.55 }, 0.2)
           .to(q("[data-tagline], [data-fade-meta]"), { opacity: 0, y: -20, duration: 0.25 }, 0.05)
           .to(q("[data-edge]"), { opacity: 1, duration: 0.6 }, 0.15)
           .fromTo(q("[data-define] > *"), { opacity: 0, y: 40 }, { opacity: 1, y: 0, stagger: 0.08, duration: 0.35 }, 0.45)
           .fromTo(q("[data-shade-scroll]"), { opacity: 0 }, { opacity: 0.72, duration: 0.45 }, 0.55)
           .to(q("[data-define]"), { opacity: 0, y: -30, duration: 0.2 }, 0.88);
         smoke(tl, 0.35);
+        wordSmoke(tl, 0.12, 0.55);
       });
 
       mm.add(MQ.mobile, () => {
@@ -101,6 +125,7 @@ export function Opening() {
           scrollTrigger: { trigger: root.current, start: "top top", end: "60% top", scrub: true },
         });
         smoke(gsap.timeline({ scrollTrigger: { trigger: root.current, start: "top top", end: "+=38%", scrub: 0.6 } }), 1);
+        wordSmoke(gsap.timeline({ scrollTrigger: { trigger: root.current, start: "top top", end: "+=50%", scrub: 0.6 } }), 0, 1);
       });
 
     },
@@ -139,7 +164,7 @@ export function Opening() {
       {/* Content */}
       <div data-content data-intro className="reveal-init relative z-10 flex h-full flex-col justify-end gutter pb-8 pt-[var(--nav-h)] sm:pb-10">
         <div className="flex flex-1 flex-col items-center justify-center text-center">
-          <h1 aria-label="Kahani" className="t-hero select-none">
+          <h1 aria-label="Kahani" data-word-smoke className="t-hero select-none will-change-transform" style={{ filter: "url(#word-smoke)" }}>
             <span data-word className="flex justify-center overflow-hidden pb-[0.04em]" aria-hidden>
               {WORD.map((l, i) => (
                 <span key={i} data-letter-x className="inline-block will-change-transform">
@@ -191,6 +216,15 @@ export function Opening() {
           </div>
         </div>
       </div>
+
+      {/* Smoke filter for the KAHANI word (identity at rest) */}
+      <svg aria-hidden width="0" height="0" className="absolute">
+        <filter id="word-smoke" x="-20%" y="-120%" width="140%" height="340%" colorInterpolationFilters="sRGB">
+          <feTurbulence id="word-smoke-noise" type="fractalNoise" baseFrequency="0.008 0.03" numOctaves="2" seed="11" result="noise" />
+          <feDisplacementMap id="word-smoke-disp" in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="G" result="warp" />
+          <feGaussianBlur id="word-smoke-blur" in="warp" stdDeviation="0" />
+        </filter>
+      </svg>
 
       {/* Smoke filter for the story mark (identity at rest: scale 0, blur 0) */}
       <svg aria-hidden width="0" height="0" className="absolute">
