@@ -72,9 +72,9 @@ export const assets = {
   // ---------------------------------------------------------------- KITCHEN / CRAFT
   flames: a({
     id: "flames", file: "2019/08/11_Zoom.jpg",
-    subject: "Flames rising from a pan as a chef cooks over high heat",
-    category: "kitchen", type: "photograph", resolution: "verify", aspect: "landscape",
-    placement: "Craft: FIRE", focus: "40% 50%", sourcePage: "/gallery/",
+    subject: "Flames leaping from a pan as a chef cooks over high heat in the Kahani kitchen",
+    category: "kitchen", type: "photograph", resolution: "1672 × 941 (client-supplied)", aspect: "landscape",
+    hq: "fire.webp", placement: "Craft: FIRE", focus: "38% 45%", sourcePage: "/gallery/",
   }),
   wokToss: a({
     id: "wokToss", file: "2019/08/05_Zoom.jpg",
@@ -85,14 +85,14 @@ export const assets = {
   plating: a({
     id: "plating", file: "2019/08/01_Zoom.jpg",
     subject: "A chef finishing a plate with tweezers at the pass",
-    category: "kitchen", type: "photograph", resolution: "verify", aspect: "landscape",
-    placement: "Craft: FINESSE", focus: "45% 45%", sourcePage: "/gallery/",
+    category: "kitchen", type: "photograph", resolution: "1536 × 1024 (client-supplied)", aspect: "landscape",
+    hq: "finesse-plating.webp", placement: "Craft: FINESSE", focus: "42% 50%", sourcePage: "/gallery/",
   }),
   platingChops: a({
     id: "platingChops", file: "2019/08/10_Zoom.jpg",
-    subject: "Grilled meat being plated in the Kahani kitchen",
-    category: "kitchen", type: "photograph", resolution: "verify", aspect: "landscape",
-    placement: "Craft: FLAVOUR", focus: "50% 55%", sourcePage: "/gallery/",
+    subject: "Chargrilled chicken plated with a herb garnish at the Kahani pass",
+    category: "kitchen", type: "photograph", resolution: "1671 × 941 (client-supplied)", aspect: "landscape",
+    hq: "flavour-plating.webp", placement: "Craft: FLAVOUR", focus: "45% 65%", sourcePage: "/gallery/",
   }),
   rollingBread: a({
     id: "rollingBread", file: "2019/08/07_Zoom.jpg",
