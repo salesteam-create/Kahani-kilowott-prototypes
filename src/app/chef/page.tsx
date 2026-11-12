@@ -25,7 +25,7 @@ const CHAPTERS = [
 export default function Chef() {
   return (
     <>
-      <PageHero image="chefSeated" kicker="The chef" title={["Peter Joseph.", "The man behind the story."]} alt="Chef Peter Joseph seated in the Kahani dining room" />
+      <PageHero image="chefInRestaurant" kicker="The chef" title={["Peter Joseph.", "The man behind the story."]} alt="Chef Peter Joseph in his whites in the Kahani dining room" focus="48% 12%" />
 
       <section className="gutter grid grid-cols-1 gap-12 py-24 lg:grid-cols-12 lg:py-36">
         <div className="lg:sticky lg:top-28 lg:col-span-5 lg:self-start">

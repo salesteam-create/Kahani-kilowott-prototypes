@@ -17,6 +17,7 @@ export function PageHero({
   children,
   height = "tall",
   alt,
+  focus,
 }: {
   image: AssetId;
   kicker: string;
@@ -25,6 +26,8 @@ export function PageHero({
   children?: ReactNode;
   height?: "tall" | "short";
   alt?: string;
+  /** Override the photo's crop point for this hero only. */
+  focus?: string;
 }) {
   const root = useRef<HTMLElement>(null);
 
@@ -51,7 +54,7 @@ export function PageHero({
     <section ref={root} className={`relative overflow-hidden bg-obsidian ${height === "tall" ? "h-[92svh] min-h-[36rem]" : "h-[72svh] min-h-[30rem]"}`}>
       <div data-ph-frame className="absolute inset-0 overflow-hidden">
         <div data-ph-drift className="absolute inset-0">
-          <Img id={image} priority alt={alt} />
+          <Img id={image} priority alt={alt} style={focus ? { objectPosition: focus } : undefined} />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-obsidian/50" />
         <div className="scrim-left absolute inset-0 opacity-80" />
