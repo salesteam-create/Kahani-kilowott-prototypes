@@ -97,8 +97,8 @@ export const assets = {
   rollingBread: a({
     id: "rollingBread", file: "2019/08/07_Zoom.jpg",
     subject: "Hands rolling out bread dough with a wooden rolling pin",
-    category: "kitchen", type: "photograph", resolution: "verify", aspect: "landscape",
-    placement: "Origin: a mother's kitchen", focus: "55% 55%", sourcePage: "/gallery/",
+    category: "kitchen", type: "photograph", resolution: "1672 × 941 (client-supplied)", aspect: "landscape",
+    hq: "rolling-bread.webp", placement: "Origin: a mother's kitchen", focus: "45% 72%", sourcePage: "/gallery/",
   }),
   avocadoGrill: a({
     id: "avocadoGrill", file: "2019/08/06_Zoom.jpg",
@@ -116,9 +116,9 @@ export const assets = {
   }),
   spiceTable: a({
     id: "spiceTable", file: "2019/08/Octopus_Calimari_4_Big.jpg",
-    subject: "Overhead view of plated seafood surrounded by spices on a wooden table",
-    category: "ingredients", type: "photograph", resolution: "verify", aspect: "landscape",
-    placement: "Origin: markets and spice", focus: "50% 50%", sourcePage: "/gallery/",
+    subject: "Overhead view of an octopus salad and scallops, with cardamom, fenugreek, star anise and dried chillies on a wooden table",
+    category: "ingredients", type: "photograph", resolution: "1672 × 941 (client-supplied)", aspect: "landscape",
+    hq: "spice-table.webp", placement: "Origin: markets and spice", focus: "50% 50%", sourcePage: "/gallery/",
   }),
 
   // ---------------------------------------------------------------- FOOD (named only when on the current menu)
@@ -265,8 +265,8 @@ export const assets = {
   chefInRestaurant: a({
     id: "chefInRestaurant", file: "2019/12/kahani-about2.jpg",
     subject: "Chef Peter Joseph standing in the Kahani dining room",
-    category: "chef", type: "photograph", resolution: "verify", aspect: "landscape",
-    placement: "Origin: London", focus: "50% 30%", sourcePage: "/",
+    category: "chef", type: "photograph", resolution: "1536 × 1024 (client-supplied)", aspect: "landscape",
+    hq: "chef-in-dining-room.webp", placement: "Origin: London", focus: "48% 30%", sourcePage: "/",
   }),
   chefJourney: a({
     id: "chefJourney", file: "2026/04/A-Refined-Exploration-of-India.jpeg",
