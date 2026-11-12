@@ -156,12 +156,10 @@ export function Opening() {
         </div>
 
         {/* Bottom row: descriptor · story mark · location + reserve, on one line */}
-        <div data-bottom className="grid grid-cols-[minmax(0,1fr)_auto_auto] items-end gap-3 sm:grid-cols-[1fr_auto_1fr] sm:gap-6">
+        <div data-bottom className="grid grid-cols-[minmax(0,1fr)_auto_auto] items-center gap-3 sm:grid-cols-[1fr_auto_1fr] sm:gap-6">
           <div data-fade-meta>
             <div data-meta className="space-y-2">
               <p className="t-label text-ivory/70">{site.descriptor}</p>
-              {/* On phones the location sits under the descriptor so the row fits */}
-              <p className="t-label text-ivory/50 sm:hidden">{site.location}</p>
             </div>
           </div>
           <button
@@ -186,7 +184,6 @@ export function Opening() {
           </button>
           <div data-fade-meta className="justify-self-end">
             <div data-meta className="flex flex-col items-end gap-3 text-right">
-              <p className="t-label hidden text-ivory/70 sm:block">{site.location}</p>
               <button type="button" onClick={openReserve} className="link-line t-nav text-ivory">
                 Reserve <span className="arrow">→</span>
               </button>
