@@ -102,7 +102,7 @@ export function PrivateDining() {
           <ImageReveal direction="up" className="aspect-[4/5]">
             <Img id="roomRestaurant" />
           </ImageReveal>
-          <Parallax speed={-22} className="absolute -bottom-10 -left-6 w-[45%] sm:-left-16">
+          <Parallax speed={-12} className="relative mt-16 w-[45%] -ml-6 sm:-ml-16">
             <ImageReveal direction="right" className="aspect-square border-[10px] border-obsidian" delay={0.2}>
               <Img id="cocktailsTable" />
             </ImageReveal>
