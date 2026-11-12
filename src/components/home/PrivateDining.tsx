@@ -43,7 +43,7 @@ export function PrivateDining() {
     <section ref={root} id="private-dining" aria-labelledby="pd-title" className="relative bg-obsidian">
       <div data-pd-stage className="relative h-[100svh] overflow-hidden">
         <div data-pd-room className="absolute inset-0 overflow-hidden cine:[clip-path:inset(6%_44%_6%_44%)]">
-          <Img id="peacockRoom" alt="The Peacock Room: royal blue velvet seating, curtains and low pendant lights" />
+          <Img id="booths" alt="Royal blue velvet banquettes and brass wall lamps at Kahani" />
           <div className="absolute inset-0 bg-gradient-to-t from-obsidian/80 via-obsidian/20 to-obsidian/40" />
           <div className="scrim-center absolute inset-0" />
         </div>

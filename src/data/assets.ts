@@ -310,9 +310,9 @@ export const assets = {
   }),
   booths: a({
     id: "booths", file: "2019/08/Kahani_274_LowRes_Big.jpg",
-    subject: "Blue velvet banquettes beneath a sculpted ceiling",
-    category: "restaurant", type: "photograph", resolution: "verify", aspect: "landscape",
-    placement: "Experience chapter", focus: "50% 50%", sourcePage: "/gallery/",
+    subject: "Royal blue velvet banquettes and brass wall lamps beneath a sculpted, softly lit wall",
+    category: "restaurant", type: "photograph", resolution: "1536 × 1024 (client-supplied)", aspect: "landscape",
+    hq: "blue-velvet-booths.webp", placement: "Experience chapter", focus: "50% 50%", sourcePage: "/gallery/",
   }),
   roomRestaurant: a({
     id: "roomRestaurant", file: "2019/12/home-rooms1.jpg",
