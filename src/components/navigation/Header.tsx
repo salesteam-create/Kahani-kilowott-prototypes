@@ -17,18 +17,32 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
 
+  // Hide on a deliberate scroll down, show on a deliberate scroll up. Direction
+  // only counts once it has travelled THRESHOLD px, so the easing tail of smooth
+  // scrolling (1–2px frames) can never toggle the header back and forth.
   useEffect(() => {
+    const THRESHOLD = 24;
     let last = window.scrollY;
+    let travel = 0;
+    let isHidden = false;
+    let isScrolled = false;
     let raf = 0;
+    const update = () => {
+      raf = 0;
+      const y = window.scrollY;
+      const dy = y - last;
+      last = y;
+      if (dy !== 0) travel = Math.sign(dy) === Math.sign(travel) ? travel + dy : dy;
+      const nextScrolled = y > 40;
+      let nextHidden = isHidden;
+      if (y < 240) nextHidden = false;
+      else if (travel > THRESHOLD) nextHidden = true;
+      else if (travel < -THRESHOLD) nextHidden = false;
+      if (nextScrolled !== isScrolled) setScrolled((isScrolled = nextScrolled));
+      if (nextHidden !== isHidden) setHidden((isHidden = nextHidden));
+    };
     const onScroll = () => {
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(() => {
-        const y = window.scrollY;
-        setScrolled(y > 40);
-        setHidden(y > 240 && y > last + 2);
-        if (y < last - 2) setHidden(false);
-        last = y;
-      });
+      if (!raf) raf = requestAnimationFrame(update);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -40,11 +54,11 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-[transform,background-color,backdrop-filter,border-color] duration-700 ease-[cubic-bezier(.22,1,.36,1)] ${
+      className={`fixed inset-x-0 top-0 z-50 transition-[transform,background-color,border-color] duration-500 ease-[cubic-bezier(.22,1,.36,1)] will-change-transform ${
         hidden && !panel ? "-translate-y-full" : "translate-y-0"
       } ${
         scrolled && !panel
-          ? "border-b border-line bg-obsidian/75 backdrop-blur-md"
+          ? "border-b border-line bg-obsidian/90"
           : "border-b border-transparent bg-transparent"
       }`}
     >

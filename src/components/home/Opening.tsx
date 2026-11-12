@@ -70,7 +70,8 @@ export function Opening() {
         tl.to(el.querySelector("#kahani-smoke-disp"), { attr: { scale: 40 }, duration: d, ease: "power1.in" }, 0)
           .to(el.querySelector("#kahani-smoke-blur"), { attr: { stdDeviation: 3 }, duration: d, ease: "power1.in" }, 0)
           .to(el.querySelector("#kahani-smoke-noise"), { attr: { baseFrequency: "0.018 0.07" }, duration: d, ease: "power1.in" }, 0)
-          .to(q("[data-smoke]"), { opacity: 0, y: -40, scale: 1.1, duration: d, ease: "power2.in" }, 0);
+          .to(q("[data-smoke]"), { opacity: 0, y: -40, scale: 1.1, duration: d, ease: "power2.in" }, 0)
+          .set(q("[data-smoke] img"), { filter: "url(#kahani-smoke)" }, 0.001);
       };
 
       // KAHANI dissolves like smoke: turbulence warps and blurs the whole word
@@ -80,6 +81,7 @@ export function Opening() {
         tl.to(el.querySelector("#word-smoke-disp"), { attr: { scale: 140 }, duration: d, ease: "power1.in" }, at)
           .to(el.querySelector("#word-smoke-blur"), { attr: { stdDeviation: 9 }, duration: d, ease: "power1.in" }, at)
           .to(el.querySelector("#word-smoke-noise"), { attr: { baseFrequency: "0.022 0.08" }, duration: d, ease: "power1.in" }, at)
+          .set(q("[data-word-smoke]"), { filter: "url(#word-smoke)" }, at + 0.001)
           .to(q("[data-word-smoke]"), { yPercent: -30, opacity: 0, scale: 1.05, duration: d, ease: "power1.in" }, at)
           .to(
             q("[data-letter-x]"),
@@ -164,7 +166,7 @@ export function Opening() {
       {/* Content */}
       <div data-content data-intro className="reveal-init relative z-10 flex h-full flex-col justify-end gutter pb-8 pt-[var(--nav-h)] sm:pb-10">
         <div className="flex flex-1 flex-col items-center justify-center text-center">
-          <h1 aria-label="Kahani" data-word-smoke className="t-hero select-none will-change-transform" style={{ filter: "url(#word-smoke)" }}>
+          <h1 aria-label="Kahani" data-word-smoke className="t-hero select-none will-change-transform" style={{ filter: "none" }}>
             <span data-word className="flex justify-center overflow-hidden pb-[0.04em]" aria-hidden>
               {WORD.map((l, i) => (
                 <span key={i} data-letter-x className="inline-block will-change-transform">
@@ -175,7 +177,7 @@ export function Opening() {
               ))}
             </span>
           </h1>
-          <p data-tagline className="t-label mt-6 overflow-hidden text-ivory/85 sm:mt-8" style={{ letterSpacing: "0.42em" }}>
+          <p data-tagline className="t-label mt-6 overflow-hidden text-ivory/85 sm:mt-8" style={{ letterSpacing: 0 }}>
             <span className="inline-block">{site.tagline}</span>
           </p>
         </div>
@@ -203,7 +205,7 @@ export function Opening() {
                 height={91}
                 draggable={false}
                 className="h-auto w-[30vw] max-w-[15rem] transition-opacity duration-500 group-hover:opacity-85 sm:w-[min(15rem,20vw)]"
-                style={{ filter: "url(#kahani-smoke)" }}
+                style={{ filter: "none" }}
               />
             </span>
           </button>

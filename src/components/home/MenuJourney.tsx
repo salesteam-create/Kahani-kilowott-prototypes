@@ -40,6 +40,8 @@ export function MenuJourney() {
             invalidateOnRefresh: true,
             onUpdate: (self) => {
               gsap.set(q("[data-m-progress]"), { scaleX: self.progress });
+              // The final panel is the menu index; the progress rail steps aside for it.
+              gsap.to(q("[data-m-rail]"), { autoAlpha: self.progress > 0.88 ? 0 : 1, duration: 0.4, overwrite: true });
             },
           },
         });
@@ -127,7 +129,7 @@ export function MenuJourney() {
           </div>
         </div>
 
-        <div className="gutter pointer-events-none absolute inset-x-0 bottom-6 z-10 flex items-center gap-6">
+        <div data-m-rail className="gutter pointer-events-none absolute inset-x-0 bottom-6 z-10 flex items-center gap-6">
           <span className="t-label text-ivory/50">The menu</span>
           <span className="relative h-px flex-1 bg-line">
             <span data-m-progress className="absolute inset-0 origin-left scale-x-0 bg-brass" />

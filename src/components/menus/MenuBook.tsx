@@ -32,7 +32,7 @@ export function MenuBook() {
     els.forEach((el) => io.observe(el));
     // Deep link from the homepage (/menus/#tasting).
     const hash = window.location.hash.slice(1);
-    if (hash) setTimeout(() => scrollTo(`#${hash}`, { offset: -140, immediate: true }), 300);
+    if (hash && list.some((m) => m.slug === hash)) setTimeout(() => scrollTo(`#${hash}`, { offset: -140, immediate: true }), 300);
     return () => io.disconnect();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [list]);

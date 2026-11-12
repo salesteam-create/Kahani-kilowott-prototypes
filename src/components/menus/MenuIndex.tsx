@@ -31,7 +31,7 @@ export function MenuIndex() {
         <div className="absolute inset-0 bg-gradient-to-r from-transparent to-espresso/90" />
         <div className="scrim-bottom absolute inset-x-0 bottom-0 h-1/2" />
         {current ? (
-          <p className="t-label absolute bottom-10 left-10 max-w-xs text-ivory/85">
+          <p className="t-label absolute bottom-20 left-10 max-w-xs text-ivory/85">
             {current.meta ?? current.summary}
           </p>
         ) : null}
