@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useUI } from "@/components/layout/UIProvider";
+import { LocalTime } from "./LocalTime";
 
 /**
  * Minimal header: wordmark left, reservation + menu trigger right.
@@ -48,21 +49,15 @@ export function Header() {
       }`}
     >
       <div className="gutter relative flex h-[var(--nav-h)] items-center justify-between gap-6">
-        <Link
-          href="/"
-          aria-label="Kahani, home"
-          className="t-nav text-[0.95rem] tracking-[0.42em] text-ivory transition-opacity hover:opacity-70"
-          data-cursor="hide"
-          style={{ fontWeight: 420 }}
-        >
-          KAHANI
+        {/* Location and live London time; links to the contact page */}
+        <Link href="/contact/" aria-label="Kahani, Chelsea, London: find us and opening times" className="relative z-10 transition-opacity hover:opacity-80">
+          <LocalTime />
         </Link>
 
         {/* Brand mark, centred in the header */}
         <Link
           href="/"
-          aria-hidden="true"
-          tabIndex={-1}
+          aria-label="Kahani, home"
           data-cursor="hide"
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-500 hover:opacity-80"
         >
