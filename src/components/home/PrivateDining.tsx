@@ -6,7 +6,6 @@ import { gsap, MQ, useGSAP } from "@/lib/gsap";
 import { Img } from "@/components/common/Img";
 import { ImageReveal } from "@/components/motion/ImageReveal";
 import { RevealText } from "@/components/motion/RevealText";
-import { Parallax } from "@/components/motion/Parallax";
 import { site } from "@/data/site";
 import { copy } from "@/data/content";
 import { SpendNote } from "@/components/common/SpendNote";
@@ -102,11 +101,6 @@ export function PrivateDining() {
           <ImageReveal direction="up" className="aspect-[4/5]">
             <Img id="roomRestaurant" />
           </ImageReveal>
-          <Parallax speed={-12} className="relative mt-16 w-[45%] -ml-6 sm:-ml-16">
-            <ImageReveal direction="right" className="aspect-square border-[10px] border-obsidian" delay={0.2}>
-              <Img id="cocktailsTable" />
-            </ImageReveal>
-          </Parallax>
         </div>
       </div>
     </section>
