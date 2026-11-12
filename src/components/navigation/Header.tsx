@@ -74,6 +74,7 @@ export function Header() {
             onClick={openMenu}
             aria-expanded={panel === "menu"}
             aria-controls="site-menu"
+            aria-label="Open menu"
             className="group t-nav flex h-10 items-center gap-3 pl-3 text-ivory"
           >
             <span className="hidden xs:inline">Menu</span>

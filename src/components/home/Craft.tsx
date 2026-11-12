@@ -69,9 +69,9 @@ export function Craft() {
   );
 
   return (
-    <section ref={root} id="craft" aria-labelledby="craft-title" className="relative bg-obsidian lg:h-[100svh] lg:overflow-hidden">
+    <section ref={root} id="craft" aria-labelledby="craft-title" className="relative bg-obsidian cine:h-[100svh] cine:overflow-hidden">
       {/* Desktop */}
-      <div className="relative hidden h-full lg:block">
+      <div className="relative hidden h-full cine:block">
         <div data-c-stage className="absolute inset-0 overflow-hidden" style={{ clipPath: "inset(94% 6% 0% 6%)" }}>
           {STAGES.map((s) => (
             <div key={s.word} data-c-img className="absolute inset-0">
@@ -107,7 +107,7 @@ export function Craft() {
       </div>
 
       {/* Mobile & tablet */}
-      <div className="py-24 lg:hidden">
+      <div className="py-24 cine:hidden">
         <div className="gutter">
           <p className="t-label mb-6 text-brass">04 · The craft</p>
           <h2 className="t-display">

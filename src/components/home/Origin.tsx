@@ -68,9 +68,9 @@ export function Origin() {
   );
 
   return (
-    <section ref={root} id="origin" aria-labelledby="origin-title" className="relative bg-[#141210] lg:h-[100svh] lg:overflow-hidden">
+    <section ref={root} id="origin" aria-labelledby="origin-title" className="relative bg-[#141210] cine:h-[100svh] cine:overflow-hidden">
       {/* Desktop */}
-      <div className="relative hidden h-full lg:grid lg:grid-cols-12">
+      <div className="relative hidden h-full cine:grid cine:grid-cols-12">
         <div className="gutter relative z-10 col-span-4 flex flex-col justify-between py-[calc(var(--nav-h)+2rem)] pr-8">
           <div data-o-heading>
             <p className="t-label mb-6 text-brass">03 · The origin</p>
@@ -125,7 +125,7 @@ export function Origin() {
       </div>
 
       {/* Mobile & tablet */}
-      <div className="gutter py-24 lg:hidden">
+      <div className="gutter py-24 cine:hidden">
         <p className="t-label mb-6 text-brass">03 · The origin</p>
         <RevealText as="h2" className="t-display">
           Rooted in heritage. Reimagined in London.

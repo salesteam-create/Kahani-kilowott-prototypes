@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Full cinematic compositions: desktop AND motion allowed. Otherwise the stacked layout is used. */
+@custom-variant cine (@media (min-width: 1024px) and (prefers-reduced-motion: no-preference));
+
 /* ------------------------------------------------------------------ TOKENS */
 @theme {
   --color-obsidian: #10100f;

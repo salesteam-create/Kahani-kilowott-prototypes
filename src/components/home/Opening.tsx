@@ -166,7 +166,7 @@ export function Opening() {
       </div>
 
       {/* Definition revealed while the frame pushes in */}
-      <div data-define aria-hidden className="pointer-events-none absolute inset-0 z-10 hidden flex-col items-center justify-center gap-5 text-center lg:flex">
+      <div data-define aria-hidden style={{ opacity: 0 }} className="pointer-events-none absolute inset-0 z-10 hidden flex-col items-center justify-center gap-5 text-center lg:flex">
         <p className="t-label text-brass">कहानी · Kahani · noun</p>
         <p className="t-display max-w-[14ch]">Story.</p>
         <p className="t-lead max-w-md text-ivory/75">In Hindi, kahani means story. Every dish here has one.</p>

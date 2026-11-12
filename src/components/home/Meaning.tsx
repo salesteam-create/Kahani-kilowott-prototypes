@@ -38,9 +38,9 @@ export function Meaning() {
   );
 
   return (
-    <section ref={root} id="meaning" aria-labelledby="meaning-title" className="relative overflow-hidden bg-obsidian lg:h-[100svh]">
+    <section ref={root} id="meaning" aria-labelledby="meaning-title" className="relative overflow-hidden bg-obsidian cine:h-[100svh]">
       {/* Desktop composition */}
-      <div className="relative hidden h-full lg:block">
+      <div className="relative hidden h-full cine:block">
         <div data-plate className="absolute inset-0 overflow-hidden" style={{ clipPath: "inset(14% 0% 14% 64%)" }}>
           <Img id="spices" alt="Whole spices and dried chillies arranged on a dark plate" />
           <div className="absolute inset-0 bg-gradient-to-r from-obsidian/80 via-obsidian/10 to-transparent" />
@@ -82,7 +82,7 @@ export function Meaning() {
       </div>
 
       {/* Mobile & tablet composition: natural vertical storytelling */}
-      <div className="gutter py-24 lg:hidden">
+      <div className="gutter py-24 cine:hidden">
         <p className="t-label mb-6 text-brass">02 · The meaning</p>
         <RevealText as="h2" className="t-display">
           Every dish has a story.

@@ -76,9 +76,9 @@ export function MenuJourney() {
   );
 
   return (
-    <section ref={root} id="menu" aria-labelledby="menu-title" className="relative overflow-hidden bg-obsidian lg:h-[100svh]">
+    <section ref={root} id="menu" aria-labelledby="menu-title" className="relative overflow-hidden bg-obsidian cine:h-[100svh]">
       {/* Desktop film */}
-      <div className="hidden h-full lg:block">
+      <div className="hidden h-full cine:block">
         <div ref={track} className="flex h-full w-max items-stretch">
           {/* Intro panel */}
           <div className="gutter flex w-[44vw] shrink-0 flex-col justify-center pr-16">
@@ -137,7 +137,7 @@ export function MenuJourney() {
       </div>
 
       {/* Mobile & tablet: native snap rail */}
-      <div className="py-24 lg:hidden">
+      <div className="py-24 cine:hidden">
         <div className="gutter">
           <p className="t-label mb-6 text-brass">05 · The menu</p>
           <RevealText as="h2" className="t-display">

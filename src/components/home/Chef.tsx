@@ -49,9 +49,9 @@ export function Chef() {
   );
 
   return (
-    <section ref={root} id="chef" aria-labelledby="chef-title" className="relative overflow-hidden bg-espresso lg:h-[100svh]">
+    <section ref={root} id="chef" aria-labelledby="chef-title" className="relative overflow-hidden bg-espresso cine:h-[100svh]">
       {/* Desktop */}
-      <div className="relative hidden h-full lg:grid lg:grid-cols-12">
+      <div className="relative hidden h-full cine:grid cine:grid-cols-12">
         <div className="relative col-span-5 h-full">
           <div data-ch-portrait className="absolute inset-0 overflow-hidden">
             <Img id="chefPortrait" alt="Chef Peter Joseph" />
@@ -84,7 +84,7 @@ export function Chef() {
       </div>
 
       {/* Mobile & tablet */}
-      <div className="py-24 lg:hidden">
+      <div className="py-24 cine:hidden">
         <div className="gutter">
           <p className="t-label mb-6 text-brass">07 · The chef</p>
           <RevealText as="h2" className="t-display">

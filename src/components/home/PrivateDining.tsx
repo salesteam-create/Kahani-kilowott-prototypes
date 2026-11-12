@@ -42,7 +42,7 @@ export function PrivateDining() {
   return (
     <section ref={root} id="private-dining" aria-labelledby="pd-title" className="relative bg-obsidian">
       <div data-pd-stage className="relative h-[100svh] overflow-hidden">
-        <div data-pd-room className="absolute inset-0 overflow-hidden lg:[clip-path:inset(6%_44%_6%_44%)]">
+        <div data-pd-room className="absolute inset-0 overflow-hidden cine:[clip-path:inset(6%_44%_6%_44%)]">
           <Img id="peacockRoom" alt="The Peacock Room: royal blue velvet seating, curtains and low pendant lights" />
           <div className="absolute inset-0 bg-gradient-to-t from-obsidian/80 via-transparent to-obsidian/30" />
         </div>
@@ -61,8 +61,8 @@ export function PrivateDining() {
         </div>
       </div>
 
-      <div className="gutter grid grid-cols-1 gap-14 py-24 lg:grid-cols-12 lg:gap-8 lg:py-36">
-        <div className="lg:col-span-5">
+      <div className="gutter grid grid-cols-1 gap-14 py-24 cine:grid-cols-12 cine:gap-8 cine:py-36">
+        <div className="cine:col-span-5">
           <RevealText as="p" className="t-headline">
             Up to fourteen guests, curtained off from the world.
           </RevealText>
@@ -97,7 +97,7 @@ export function PrivateDining() {
           </div>
         </div>
 
-        <div className="relative lg:col-span-6 lg:col-start-7">
+        <div className="relative cine:col-span-6 cine:col-start-7">
           <ImageReveal direction="up" className="aspect-[4/5]">
             <Img id="privateFood" />
           </ImageReveal>
