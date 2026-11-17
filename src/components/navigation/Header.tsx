@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useUI } from "@/components/layout/UIProvider";
 import { LocalTime } from "./LocalTime";
+import { withBase } from "@/lib/base-path";
 
 /**
  * Minimal header: wordmark left, reservation + menu trigger right.
@@ -76,7 +77,7 @@ export function Header() {
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-500 hover:opacity-80"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/hq/kahani-mark.png" alt="" width={607} height={202} className="h-5 w-auto xs:h-7 sm:h-9" draggable={false} />
+          <img src={withBase("/images/hq/kahani-mark.png")} alt="" width={607} height={202} className="h-5 w-auto xs:h-7 sm:h-9" draggable={false} />
         </Link>
 
         <nav aria-label="Primary" className="flex items-center gap-2 sm:gap-6">

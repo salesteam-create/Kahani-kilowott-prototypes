@@ -8,6 +8,7 @@ import { site } from "@/data/site";
 import { useUI } from "@/components/layout/UIProvider";
 import { whenIntroReady } from "@/components/layout/Preloader";
 import { useScroll } from "@/components/motion/ScrollProvider";
+import { withBase } from "@/lib/base-path";
 
 const WORD = "KAHANI".split("");
 
@@ -199,7 +200,7 @@ export function Opening() {
             <span data-smoke className="block origin-center will-change-transform">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/hq/kahani-story.png"
+                src={withBase("/images/hq/kahani-story.png")}
                 alt=""
                 width={833}
                 height={91}

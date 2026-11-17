@@ -19,6 +19,8 @@
  * NEXT_PUBLIC_ASSET_MODE=local for production.
  */
 
+import { withBase } from "@/lib/base-path";
+
 const ORIGIN = "https://www.kahanilondon.com/wp-content/uploads";
 const LOCAL = process.env.NEXT_PUBLIC_ASSET_MODE === "local";
 
@@ -405,8 +407,8 @@ export const heroVideo: { mp4: string; webm?: string; poster: AssetId } | null =
 
 export function assetUrl(id: AssetId) {
   const asset: Asset = assets[id];
-  if (asset.hq) return `/images/hq/${asset.hq}`;
-  return LOCAL ? `/media/${asset.file}` : `${ORIGIN}/${asset.file}`;
+  if (asset.hq) return withBase(`/images/hq/${asset.hq}`);
+  return LOCAL ? withBase(`/media/${asset.file}`) : `${ORIGIN}/${asset.file}`;
 }
 
 /** Curated gallery (each image once), grouped for filtering. */

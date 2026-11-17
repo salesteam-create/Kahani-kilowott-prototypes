@@ -30,6 +30,16 @@ Next.js 16 (App Router, static export) · React 19 · TypeScript · Tailwind CSS
 
 All animations respect `prefers-reduced-motion` (no pins, no parallax, simple fades). Smooth scrolling (Lenis) is used on desktop pointers only; touch devices keep native scrolling.
 
+## Deploy to GitHub Pages
+
+The workflow in `.github/workflows/deploy-pages.yml` builds the site and publishes it on every push to `main`.
+
+1. In the repository go to **Settings → Pages → Build and deployment → Source** and choose **GitHub Actions**.
+2. Merge the work into `main` (or run the workflow manually from the **Actions** tab).
+3. The site appears at `https://<account>.github.io/<repository-name>/`.
+
+The workflow sets `NEXT_PUBLIC_BASE_PATH` to `/<repository-name>` so scripts, links and photos resolve inside that sub-folder. For a custom domain or any root-domain host, build without it.
+
 ## Content and assets
 
 - **Every photograph is official Kahani photography** from the existing site, listed with subject, source page and placement in `src/data/assets.ts`.
